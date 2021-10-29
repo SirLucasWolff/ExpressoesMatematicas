@@ -8,8 +8,10 @@ namespace ExpressoesMatematicas
 {
     public class Calculadora
     {
-        public double Calcular(string valoresParaCalculo)
+        public int Calcular(string valoresParaCalculo)
         {
+            int resultado = 0;
+
             var tratar = valoresParaCalculo.Trim();
             var valoresTratados = tratar.Replace(" ","");
 
@@ -21,48 +23,54 @@ namespace ExpressoesMatematicas
                 var valorEmParenteses = valoresParaCalculo.Substring(index, lastIndex - index);
                 var foraDeParenteses = valoresParaCalculo.Remove(index - 1, (lastIndex - index) + 2);
             }
-            
-            double valor1 = Convert.ToDouble(valoresTratados[0]);
-            double valor2 = Convert.ToDouble(valoresTratados[2]);
-            
-            foreach (var Caracter in valoresParaCalculo)
+            List<int> valores = new List<int>();
+            List<char> operadores = new List<char>();
+
+            foreach (var valor in valoresTratados)
             {
-                switch (Caracter)
+                if (valor == '+')
                 {
-                   //case 
+                    operadores.Add(valor);
+                }
+                else
+                {
+                    valores.Add(Convert.ToInt32(valor.ToString()));
                 }
             }
 
-            string operador, valorDigitado;
+            foreach (var operador in operadores)
+            {
+                switch (operador)
+                {
+                    case '+':
+                        resultado = valores[0] + valores[1];
+                        valores.RemoveAt(1);
+                        valores.RemoveAt(0);                  
+                        break;
+                    //case "-":
+                    //    resultado = Math.Round(valor1 - valor2, 4);
+                    //    Console.WriteLine($"{ valor1 } {'-'} { valor2 } = {resultado}");
+                    //    break;
+                    //case "*":
+                    //    resultado = Math.Round(valor1 * valor2, 4);
+                    //    Console.WriteLine($"{ valor1 } {'*'} { valor2 } = {resultado}");
+                    //    break;
+                    //case "/":
+                    //    resultado = Math.Round(valor1 / valor2, 4);
+                    //    Console.WriteLine($"{ valor1 } {'/'} { valor2 } = {resultado}");
+                    //    break;
+                    //case "%":
+                    //    resultado = Math.Round(valor1 % valor2, 4);
+                    //    Console.WriteLine($"{ valor1 } {'%'} { valor2 } = {resultado}");
+                    //    break;
+                   
+                }
+            }
 
-            //switch (operador)
-            //{
-            //    case "+":
-            //        resultado = Math.Round(valor1 + valor2, 4);
-            //        Console.WriteLine($"{ valor1 } {'+'} { valor2 } = {resultado}");
-            //        break;
-            //    case "-":
-            //        resultado = Math.Round(valor1 - valor2, 4);
-            //        Console.WriteLine($"{ valor1 } {'-'} { valor2 } = {resultado}");
-            //        break;
-            //    case "*":
-            //        resultado = Math.Round(valor1 * valor2, 4);
-            //        Console.WriteLine($"{ valor1 } {'*'} { valor2 } = {resultado}");
-            //        break;
-            //    case "/":
-            //        resultado = Math.Round(valor1 / valor2, 4);
-            //        Console.WriteLine($"{ valor1 } {'/'} { valor2 } = {resultado}");
-            //        break;
-            //    case "%":
-            //        resultado = Math.Round(valor1 % valor2, 4);
-            //        Console.WriteLine($"{ valor1 } {'%'} { valor2 } = {resultado}");
-            //        break;
-            //    default:
-            //        Console.WriteLine("Digite uma operação válida");
-            //        break;
-            //}
 
-            return 10;
+          
+
+            return resultado;
         }
     }
 }

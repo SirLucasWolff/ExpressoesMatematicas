@@ -24,10 +24,20 @@ namespace ExpressoesMatematicas.UnitTest
         }
 
         [TestMethod]
+        public void deveCalcularSomar2Valores()
+        {
+            //arrange
+            string valoresParaCalcular = "9 + 9 ";
+            //act
+            double resultado = calculadora.Calcular(valoresParaCalcular);
+            //assert
+            Assert.AreEqual(18, resultado);
+        }
+        [TestMethod]
         public void deveCalcularSomar()
         {
             //arrange
-            string valoresParaCalcular = "1 + 1 ";
+            string valoresParaCalcular = "1 + 1 + 1";
             //act
             double resultado = calculadora.Calcular(valoresParaCalcular);
             //assert
