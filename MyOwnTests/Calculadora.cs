@@ -32,6 +32,10 @@ namespace ExpressoesMatematicas
                 {
                     operadores.Add(valor);
                 }
+                else if (valor == '-')
+                {
+                    operadores.Add(valor);
+                }
                 else
                 {
                     valores.Add(Convert.ToInt32(valor.ToString()));
@@ -40,35 +44,51 @@ namespace ExpressoesMatematicas
 
             foreach (var operador in operadores)
             {
-                switch (operador)
+                if(operador == '+')
                 {
-                    case '+':
-                        resultado = valores[0] + valores[1];
-                        valores.RemoveAt(1);
-                        valores.RemoveAt(0);                  
-                        break;
-                    //case "-":
-                    //    resultado = Math.Round(valor1 - valor2, 4);
-                    //    Console.WriteLine($"{ valor1 } {'-'} { valor2 } = {resultado}");
-                    //    break;
-                    //case "*":
-                    //    resultado = Math.Round(valor1 * valor2, 4);
-                    //    Console.WriteLine($"{ valor1 } {'*'} { valor2 } = {resultado}");
-                    //    break;
-                    //case "/":
-                    //    resultado = Math.Round(valor1 / valor2, 4);
-                    //    Console.WriteLine($"{ valor1 } {'/'} { valor2 } = {resultado}");
-                    //    break;
-                    //case "%":
-                    //    resultado = Math.Round(valor1 % valor2, 4);
-                    //    Console.WriteLine($"{ valor1 } {'%'} { valor2 } = {resultado}");
-                    //    break;
-                   
+                    foreach(var item in valores)
+                    {
+                        resultado += item;
+                    }
                 }
+                if(operador == '-')
+                {
+                    foreach (var item in valores)
+                    {
+                        resultado -= item;
+                    }
+                }
+
+                //valores.Clear();
+
+                //switch (operador)
+                //{
+                //    case '+':
+                //        resultado = valores[0] + valores[1] + valores[2];
+                //        valores.RemoveAt(2);
+                //        valores.RemoveAt(1);
+                //        valores.RemoveAt(0);
+                //        operadores.Clear();
+                //        break;
+                //    //case "-":
+                //    //    resultado = Math.Round(valor1 - valor2, 4);
+                //    //    Console.WriteLine($"{ valor1 } {'-'} { valor2 } = {resultado}");
+                //    //    break;
+                //    //case "*":
+                //    //    resultado = Math.Round(valor1 * valor2, 4);
+                //    //    Console.WriteLine($"{ valor1 } {'*'} { valor2 } = {resultado}");
+                //    //    break;
+                //    //case "/":
+                //    //    resultado = Math.Round(valor1 / valor2, 4);
+                //    //    Console.WriteLine($"{ valor1 } {'/'} { valor2 } = {resultado}");
+                //    //    break;
+                //    //case "%":
+                //    //    resultado = Math.Round(valor1 % valor2, 4);
+                //    //    Console.WriteLine($"{ valor1 } {'%'} { valor2 } = {resultado}");
+                //    //    break;
+                   
+                //}
             }
-
-
-          
 
             return resultado;
         }

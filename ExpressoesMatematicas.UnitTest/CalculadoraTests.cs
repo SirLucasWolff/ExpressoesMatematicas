@@ -34,14 +34,14 @@ namespace ExpressoesMatematicas.UnitTest
             Assert.AreEqual(18, resultado);
         }
         [TestMethod]
-        public void deveCalcularSomar()
+        public void deveCalcularSomar3Valores()
         {
             //arrange
-            string valoresParaCalcular = "1 + 1 + 1";
+            string valoresParaCalcular = "1 + 1 - 1";
             //act
             double resultado = calculadora.Calcular(valoresParaCalcular);
             //assert
-            Assert.AreEqual(2, resultado);
+            Assert.AreEqual(3, resultado);
         }
     }
 }
