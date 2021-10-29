@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyOwnTests
+namespace ExpressoesMatematicas
 {
     public class Program
     {
