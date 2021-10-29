@@ -6,14 +6,21 @@ namespace ExpressoesMatematicas.UnitTest
     [TestClass]
     public class CalculadoraTests
     {
+        Calculadora calculadora;
+        public CalculadoraTests()
+        {
+            calculadora = new Calculadora();
+        }
+
         [TestMethod]
         public void deveCalcularSomaEmParenteses()
         {
             //arrange
             string valoresParaCalcular = "1 + ( 1 + 1 )";
             //act
-            
+            double resultado = calculadora.Calcular(valoresParaCalcular);
             //assert
+            Assert.AreEqual(3, resultado);
         }
     }
 }

@@ -10,9 +10,7 @@ namespace ExpressoesMatematicas
     {
         public static void Main(string[] args)
         {
-            Calculadora calculadora = new Calculadora();
-
-            calculadora.CalculadoraBasica();
+            
         }
     }
 }
