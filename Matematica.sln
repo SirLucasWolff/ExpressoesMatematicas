@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressoesMatematicas", "MyOwnTests\ExpressoesMatematicas.csproj", "{8F28F95D-F895-42A9-AFB6-D8129663A2AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressoesMatematicas.UnitTest", "ExpressoesMatematicas.UnitTest\ExpressoesMatematicas.UnitTest.csproj", "{2DF6D605-97B9-47DD-972A-9A741217AA08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8F28F95D-F895-42A9-AFB6-D8129663A2AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F28F95D-F895-42A9-AFB6-D8129663A2AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F28F95D-F895-42A9-AFB6-D8129663A2AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DF6D605-97B9-47DD-972A-9A741217AA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF6D605-97B9-47DD-972A-9A741217AA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF6D605-97B9-47DD-972A-9A741217AA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF6D605-97B9-47DD-972A-9A741217AA08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
