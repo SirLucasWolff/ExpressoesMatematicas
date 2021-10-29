@@ -37,11 +37,41 @@ namespace ExpressoesMatematicas.UnitTest
         public void deveCalcularSomar3Valores()
         {
             //arrange
-            string valoresParaCalcular = "1 + 1 - 1";
+            string valoresParaCalcular = "1 + 1 + 1";
             //act
             double resultado = calculadora.Calcular(valoresParaCalcular);
             //assert
             Assert.AreEqual(3, resultado);
         }
+        [TestMethod]
+        public void deveCalcularSubtrair6Valores()
+        {
+            //arrange
+            string valoresParaCalcular = "1 - 1 - 1 - 1 -1 -1";
+            //act
+            double resultado = calculadora.Calcular(valoresParaCalcular);
+            //assert
+            Assert.AreEqual(-6, resultado);
+        }
+        [TestMethod]
+        public void deveCalcularMultiplicar6Valores()
+        {
+            //arrange
+            string valoresParaCalcular = "2 * 1 * 1 * 1 *1 *1";
+            //act
+            double resultado = calculadora.Calcular(valoresParaCalcular);
+            //assert
+            Assert.AreEqual(2, resultado);
+        }
+        //[TestMethod]
+        //public void deveCalcularMultiplicar6Valores()
+        //{
+        //    //arrange
+        //    string valoresParaCalcular = "2 * 1 * 1 * 1 *1 *1";
+        //    //act
+        //    double resultado = calculadora.Calcular(valoresParaCalcular);
+        //    //assert
+        //    Assert.AreEqual(2, resultado);
+        //}
     }
 }

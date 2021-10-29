@@ -36,61 +36,71 @@ namespace ExpressoesMatematicas
                 {
                     operadores.Add(valor);
                 }
+                else if (valor == '*')
+                {
+                    operadores.Add(valor);
+                }
                 else
                 {
                     valores.Add(Convert.ToInt32(valor.ToString()));
                 }
             }
 
-            foreach (var operador in operadores)
+            bool apenasTemOperadorDeSoma = operadores.Contains('+') && !operadores.Contains('-') && !operadores.Contains('/') && !operadores.Contains('*');
+            if (apenasTemOperadorDeSoma)
             {
-                if(operador == '+')
+                foreach (var item in valores)
                 {
-                    foreach(var item in valores)
-                    {
-                        resultado += item;
-                    }
+                    resultado += item;
                 }
-                if(operador == '-')
-                {
-                    foreach (var item in valores)
-                    {
-                        resultado -= item;
-                    }
-                }
-
-                //valores.Clear();
-
-                //switch (operador)
-                //{
-                //    case '+':
-                //        resultado = valores[0] + valores[1] + valores[2];
-                //        valores.RemoveAt(2);
-                //        valores.RemoveAt(1);
-                //        valores.RemoveAt(0);
-                //        operadores.Clear();
-                //        break;
-                //    //case "-":
-                //    //    resultado = Math.Round(valor1 - valor2, 4);
-                //    //    Console.WriteLine($"{ valor1 } {'-'} { valor2 } = {resultado}");
-                //    //    break;
-                //    //case "*":
-                //    //    resultado = Math.Round(valor1 * valor2, 4);
-                //    //    Console.WriteLine($"{ valor1 } {'*'} { valor2 } = {resultado}");
-                //    //    break;
-                //    //case "/":
-                //    //    resultado = Math.Round(valor1 / valor2, 4);
-                //    //    Console.WriteLine($"{ valor1 } {'/'} { valor2 } = {resultado}");
-                //    //    break;
-                //    //case "%":
-                //    //    resultado = Math.Round(valor1 % valor2, 4);
-                //    //    Console.WriteLine($"{ valor1 } {'%'} { valor2 } = {resultado}");
-                //    //    break;
-                   
-                //}
             }
+
+            bool apenasTemOperadorDeSubtracao = !operadores.Contains('+') && operadores.Contains('-') && !operadores.Contains('/') && !operadores.Contains('*');
+            if (apenasTemOperadorDeSubtracao)
+            {
+                foreach (var item in valores)
+                {
+                    resultado -= item;
+                }
+            }
+
+            bool apenasTemOperadorDeMultiplicacao = !operadores.Contains('+') && !operadores.Contains('-') && !operadores.Contains('/') && operadores.Contains('*');
+            if (apenasTemOperadorDeMultiplicacao)
+            {           
+                foreach (var item in valores)
+                {
+                    if (valores[0] == item)
+                    {
+                        resultado = item * valores[1];
+                    }
+                    else
+                    {
+                        resultado *= item;
+                    }
+                    
+                }
+            }
+
+            bool apenasTemOperadorDeMultiplicacao = !operadores.Contains('+') && !operadores.Contains('-') && !operadores.Contains('/') && operadores.Contains('*');
+            if (apenasTemOperadorDeMultiplicacao)
+            {
+                foreach (var item in valores)
+                {
+                    if (valores[0] == item)
+                    {
+                        resultado = item * valores[1];
+                    }
+                    else
+                    {
+                        resultado *= item;
+                    }
+
+                }
+            }
+
 
             return resultado;
         }
     }
 }
+
