@@ -22,5 +22,16 @@ namespace ExpressoesMatematicas.UnitTest
             //assert
             Assert.AreEqual(3, resultado);
         }
+
+        [TestMethod]
+        public void deveCalcularSomar()
+        {
+            //arrange
+            string valoresParaCalcular = "1 + 1 ";
+            //act
+            double resultado = calculadora.Calcular(valoresParaCalcular);
+            //assert
+            Assert.AreEqual(2, resultado);
+        }
     }
 }

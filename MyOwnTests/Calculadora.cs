@@ -10,17 +10,30 @@ namespace ExpressoesMatematicas
     {
         public double Calcular(string valoresParaCalculo)
         {
+            var tratar = valoresParaCalculo.Trim();
+            var valoresTratados = tratar.Replace(" ","");
+
             var index = valoresParaCalculo.IndexOf("(") + 1;
             var lastIndex = valoresParaCalculo.IndexOf(")");
             
-            var valorEmParenteses = valoresParaCalculo.Substring(index, lastIndex - index);
-            var foraDeParenteses = valoresParaCalculo.Remove(index -1, (lastIndex - index) +2);
+            if (index > 0)
+            {
+                var valorEmParenteses = valoresParaCalculo.Substring(index, lastIndex - index);
+                var foraDeParenteses = valoresParaCalculo.Remove(index - 1, (lastIndex - index) + 2);
+            }
+            
+            double valor1 = Convert.ToDouble(valoresTratados[0]);
+            double valor2 = Convert.ToDouble(valoresTratados[2]);
+            
+            foreach (var Caracter in valoresParaCalculo)
+            {
+                switch (Caracter)
+                {
+                   //case 
+                }
+            }
 
-            return 1;
-
-
-            //double valor1 = 0, valor2 = 0, resultado, numero;
-            //string operador, valorDigitado;           
+            string operador, valorDigitado;
 
             //switch (operador)
             //{
@@ -49,7 +62,7 @@ namespace ExpressoesMatematicas
             //        break;
             //}
 
-
+            return 10;
         }
     }
 }
